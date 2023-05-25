@@ -46,3 +46,40 @@ function convertion(val){
 //Now the condition must be added that what if you do not input anything in the input box.
         .catch(err => alert('You entered Wrong city name'))
     })
+
+
+
+
+const name= 'Brian Bossy';
+const typingSpeed = 800;
+const deletionDelay = 800;
+
+const typedTextElement = document.getElementById("typed-text");
+
+const nameLength = name.length;
+let currentIndex = 0;
+let isDeleting = false;
+
+function type() {
+  const currentChar = name[currentIndex];
+
+  if (isDeleting) {
+    typedTextElement.textContent = name.substring(0, currentIndex);
+    currentIndex--;
+  } else {
+    typedTextElement.textContent = name.substring(0, currentIndex + 1);
+    currentIndex++;
+  }
+
+  if (currentIndex === nameLength) {
+    isDeleting = true;
+    setTimeout(type, deletionDelay);
+  } else if (currentIndex === -1) {
+    isDeleting = false;
+    setTimeout(type, typingSpeed);
+  } else {
+    setTimeout(type, isDeleting ? deletionDelay : typingSpeed);
+  }
+}
+
+type();
