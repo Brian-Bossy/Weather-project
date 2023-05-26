@@ -127,7 +127,7 @@ body{
 .navbar ul {
   position:fixed;
   top: 0;
-  right:0;
+  right:10px;
  list-style: none;
  cursor:pointer;
  display: flex;
@@ -144,11 +144,11 @@ color:#fff;
     text-decoration: none;
   }
   .fa-twitter {
-    color: blue;
+    color: white;
   }
   
   .fa-github{
-    color:blue;
+    color:white;
  
   }
 .my-name{
@@ -157,7 +157,8 @@ color:#fff;
 .my-name h1{
     font-size:28px;
     margin:0;
-    color:purple;
+    color:white;
+    
 }
 
 @media (max-width: 767px) {
